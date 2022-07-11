@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Interest Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-50">
+    <div class="container w-full md:w-2/4 mx-auto">
+      <form class="mt-12 p-6">
+        <h1 class="text-center">Simple Interest Calculator</h1>
+        <div class="pt-8">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" name="amount" />
+        </div>
+        <div class="pt-2">
+          <label for="rate">Rate</label>
+          <input type="number" id="rate" />
+        </div>
+        <div class="pt-2">
+          <label for="years">No. of Years </label>
+          <input type="number" id="years" /> <br />
+        </div>
+        <button
+          class="bg-green-400 px-4 py-1 ml-auto block uppercase text-white mt-4"
+          type="submit"
+        >
+          Compute
+        </button>
+      </form>
+      <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
