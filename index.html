@@ -10,29 +10,86 @@
   </head>
   <body class="bg-gray-50">
     <div class="container w-full md:w-2/4 mx-auto">
-      <form class="mt-12 p-6">
-        <h1 class="text-center">Simple Interest Calculator</h1>
-        <div class="pt-8">
-          <label for="amount">Amount</label>
-          <input type="number" id="amount" name="amount" />
+      <h1 class="text-center text-blue-500 pt-6 font-bold">
+        Simple Interest Calculator
+      </h1>
+      <div class="app">
+        <div class="bg-red-100 mt-6">
+          <span id="err" class="text-red-500 block"></span>
         </div>
-        <div class="pt-2">
-          <label for="rate">Rate</label>
-          <input type="number" id="rate" />
+        <div class="calc flex bg-blue-50 p-10">
+          <div class="left text-right">
+            <div>
+              <label for="amount">Amount *</label>
+            </div>
+            <div>
+              <label for="interest">Interest Rate *</label>
+            </div>
+            <div>
+              <label for="years">No. of Years *</label>
+            </div>
+            <input
+              id="compute"
+              type="button"
+              role="button"
+              class="bg-blue-400 hover:bg-blue-500 px-6 py-1 text-white mt-4 cursor-pointer rounded-sm transition duration-200 ease-in"
+              value="Compute"
+            />
+          </div>
+          <div class="right flex flex-col ml-6">
+            <div>
+              <input
+                id="amount"
+                class="pl-2"
+                type="number"
+                name="amount"
+                min="0"
+                value="test"
+              />
+            </div>
+            <div>
+              <input
+                type="range"
+                name="interest"
+                id="interest"
+                min="0"
+                max="100"
+                value="50"
+              />
+              <span id="rate">50</span>
+            </div>
+            <div>
+              <select id="years" name="years" id="years">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div class="pt-2">
-          <label for="years">No. of Years </label>
-          <input type="number" id="years" /> <br />
+      </div>
+
+      <!-- Result -->
+      <div class="bg-white mt-12" id="result"></div>
+
+      <footer>
+        <div>
+          <p>&copy; Everyone Can Get Rich</p>
+          <p>
+            This Calculator belongs to
+            <span class="text-blue-800 font-mono">Mahmoud Moussa</span>
+          </p>
         </div>
-        <button
-          class="bg-green-400 px-4 py-1 ml-auto block uppercase text-white mt-4"
-          type="submit"
-        >
-          Compute
-        </button>
-      </form>
-      <div id="result"></div>
+      </footer>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

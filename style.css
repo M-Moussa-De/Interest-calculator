@@ -3,15 +3,63 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-
-input {
-  border: none;
-  outline: none;
-  width: 50%;
+.container {
+  height: 100%;
+  position: relative;
 }
 
-label {
-  text-align: right !important;
-  margin-right: 50px;
-  width: 50%;
+.app {
+  max-height: 220px;
+}
+input,
+select {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+.left,
+.right {
+  max-height: 100%;
+}
+
+.left div {
+  margin: 12px 0;
+}
+
+.right > *:not(:last-child) {
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .right {
+    margin-left: 10px;
+  }
+}
+
+.animated {
+  animation: slowShow 2s ease;
+  box-shadow: 0 3px 6px rgb(216, 215, 215);
+  transition: animation 0.1ms ease-in;
+}
+@keyframes slowShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, #a3bded 0%, #6991c7 100%);
+}
+
+.err {
+  padding: 1px 6px;
 }
