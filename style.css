@@ -3,14 +3,16 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
 .container {
   height: 100%;
   position: relative;
 }
 
-.app {
-  max-height: 220px;
+.calc {
+  min-height: 220px;
 }
+
 input,
 select {
   border: none;
@@ -40,9 +42,9 @@ select {
 
 .animated {
   animation: slowShow 2s ease;
-  box-shadow: 0 3px 6px rgb(216, 215, 215);
   transition: animation 0.1ms ease-in;
 }
+
 @keyframes slowShow {
   from {
     opacity: 0;
@@ -57,9 +59,14 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-image: linear-gradient(to right, #a3bded 0%, #6991c7 100%);
 }
 
 .err {
   padding: 1px 6px;
+}
+
+.calc,
+err-wrapper,
+#result {
+  background: rgba(255 255 255 /0.3);
 }

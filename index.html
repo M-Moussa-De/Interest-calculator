@@ -1,95 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Interest Calculator</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="bg-gray-50">
-    <div class="container w-full md:w-2/4 mx-auto">
-      <h1 class="text-center text-blue-500 pt-6 font-bold">
-        Simple Interest Calculator
-      </h1>
-      <div class="app">
-        <div class="bg-red-100 mt-6">
-          <span id="err" class="text-red-500 block"></span>
-        </div>
-        <div class="calc flex bg-blue-50 p-10">
-          <div class="left text-right">
-            <div>
-              <label for="amount">Amount *</label>
-            </div>
-            <div>
-              <label for="interest">Interest Rate *</label>
-            </div>
-            <div>
-              <label for="years">No. of Years *</label>
-            </div>
-            <input
-              id="compute"
-              type="button"
-              role="button"
-              class="bg-blue-400 hover:bg-blue-500 px-6 py-1 text-white mt-4 cursor-pointer rounded-sm transition duration-200 ease-in"
-              value="Compute"
-            />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Interest Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-blue-500">
+  <div class="container p-3 w-full md:w-2/4 mx-auto">
+    <h1 class="text-center text-white pt-6 text-md font-semibold">
+      Simple Interest Calculator
+    </h1>
+    <div class="calc">
+      <div class="mt-6 err-wrapper">
+        <span id="err" class="text-red-600 block"></span>
+      </div>
+      <div class="calc flex justify-center p-10">
+        <div class="left text-right">
+          <div>
+            <label for="amount">Amount *</label>
           </div>
-          <div class="right flex flex-col ml-6">
-            <div>
-              <input
-                id="amount"
-                class="pl-2"
-                type="number"
-                name="amount"
-                min="0"
-                value="test"
-              />
-            </div>
-            <div>
-              <input
-                type="range"
-                name="interest"
-                id="interest"
-                min="0"
-                max="100"
-                value="50"
-              />
-              <span id="rate">50</span>
-            </div>
-            <div>
-              <select id="years" name="years" id="years">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-            </div>
+          <div>
+            <label for="interest">Interest Rate *</label>
+          </div>
+          <div>
+            <label for="years">No. of Years *</label>
+          </div>
+          <input id="compute" type="button" role="button"
+            class="bg-blue-400 hover:bg-blue-500 px-6 py-1 text-white mt-4 cursor-pointer rounded-sm transition duration-200 ease-in"
+            value="Compute" />
+        </div>
+        <div class="right flex flex-col ml-6">
+          <div>
+            <input id="amount" class="pl-2 bg-blue-100" type="number" name="amount" min="0" />
+          </div>
+          <div>
+            <input type="range" name="interest" id="interest" min="0" max="100" value="50" />
+            <span id="rate">50%</span>
+          </div>
+          <div>
+            <select id="years" name="years" id="years">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
           </div>
         </div>
       </div>
-
-      <!-- Result -->
-      <div class="bg-white mt-12" id="result"></div>
-
-      <footer>
-        <div>
-          <p>&copy; Everyone Can Get Rich</p>
-          <p>
-            This Calculator belongs to
-            <span class="text-blue-800 font-mono">Mahmoud Moussa</span>
-          </p>
-        </div>
-      </footer>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- Result -->
+    <div class="mt-8" id="result"></div>
+  </div>
+  <footer class="bg-gray-700">
+    <div class="text-white text-center">
+      <p>&copy; Everyone Can Get Rich</p>
+      <p>
+        This Calculator belongs to
+        <span class="text-blue-400 font-mono">Mahmoud Moussa</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
+
+<!-- class="flex flex-col justify-center" -->

@@ -1,5 +1,5 @@
 const amount = document.querySelector("#amount");
-const interset = document.querySelector("#interest");
+const interest = document.querySelector("#interest");
 const years = document.querySelector("#years");
 
 const resultArea = document.querySelector("#result");
@@ -9,43 +9,52 @@ const computeBtn = document.querySelector("#compute");
 
 const currentYear = new Date().getFullYear();
 
-interset.addEventListener("input", () => {
-  document.querySelector("#rate").textContent = interset.value;
+interest.addEventListener("input", () => {
+  document.querySelector("#rate").textContent = `${interest.value}%`;
 });
 
-computeBtn.addEventListener("click", () => {
+computeBtn.addEventListener("click", calculatorTotalAmount);
+document.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    calculatorTotalAmount();
+  }
+});
+
+function calculatorTotalAmount() {
   const vals = getUserInput();
 
   if (vals) {
     errPlaceholder.style.display = "none";
 
-    const result = vals.amountVal * vals.intersetVal * vals.yearsNo;
+    const result = vals.amountVal * (vals.interestVal / 100) * vals.yearsNo;
 
     const report = `<div class="p-6 animated">
-    <p>If you deposit <span class="bg-yellow-200">${vals.amountVal}</span>,</p>
-    <p>at an interest rate of <span class="bg-yellow-200">${
-      vals.intersetVal
-    }</span>,</p>
-    <p>You will receive an amount of <span class="bg-yellow-200">${result}</span>,</p>
-    <p>in the year <span class="bg-yellow-200">${
+    <p>If you deposit <span class="bg-white">${vals.amountVal}</span>,</p>
+    <p>at an interest rate of <span class="bg-white">${
+      vals.interestVal
+    }%</span>,</p>
+    <p>You will receive an amount of <span class="bg-white">${result}</span>,</p>
+    <p>in the year <span class="bg-white">${
       currentYear + Number(vals.yearsNo)
     }</span></p>
     </div>`;
 
     resultArea.innerHTML = report;
+    resultArea.style.display = "block";
   } else {
     errPlaceholder.classList.add("err");
-    errPlaceholder.textContent =
-      "* Please provide all required data with valid data";
+    errPlaceholder.style.display = "block";
+    errPlaceholder.textContent = "* Please provide all required data";
+    resultArea.style.display = "none";
   }
-});
+}
 
 function getUserInput() {
-  const amountVal = amount.value;
-  const intersetVal = interset.value;
-  const yearsNo = years.value;
+  const amountVal = Number(amount.value);
+  const interestVal = Number(interest.value);
+  const yearsNo = Number(years.value);
 
-  return amountVal > 0 && intersetVal && yearsNo
-    ? { amountVal, intersetVal, yearsNo }
+  return amountVal > 0 && interestVal && yearsNo
+    ? { amountVal, interestVal, yearsNo }
     : undefined;
 }
